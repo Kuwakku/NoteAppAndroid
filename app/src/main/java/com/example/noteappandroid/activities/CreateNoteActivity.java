@@ -17,7 +17,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Patterns;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,6 +58,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
     private static final int REQUEST_CODE_SELECT_IMAGE = 2;
     private AlertDialog dialogAddUrl;
+    private Note alreadyAvaliableNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +97,31 @@ public class CreateNoteActivity extends AppCompatActivity {
         selectedNoteColor = "#333333";
         selectedImagePath = "";
 
+        if (getIntent().getBooleanExtra("isViewOrUpdate", false)) {
+            alreadyAvaliableNote = (Note) getIntent().getSerializableExtra("note");
+            setViewOrUpdateNote();
+        }
+
         imgSave.setOnClickListener(v -> saveNote());
+    }
+
+    private void setViewOrUpdateNote() {
+        inputNoteTitle.setText(alreadyAvaliableNote.getTitle());
+        inputNoteSubtitle.setText(alreadyAvaliableNote.getSubtitle());
+        inputNoteText.setText(alreadyAvaliableNote.getNoteText());
+        textDateTime.setText(alreadyAvaliableNote.getDateTime());
+
+        if (alreadyAvaliableNote.getImagePath() != null && !alreadyAvaliableNote.getImagePath().trim().isEmpty()) {
+            imageNote.setImageBitmap(BitmapFactory.decodeFile(alreadyAvaliableNote.getImagePath()));
+            imageNote.setVisibility(View.VISIBLE);
+            selectedImagePath = alreadyAvaliableNote.getImagePath();
+        }
+
+        if (alreadyAvaliableNote.getWebLink() != null && !alreadyAvaliableNote.getWebLink().trim().isEmpty()) {
+            layoutWebUrl.setVisibility(View.VISIBLE);
+            textWebUrl.setText(alreadyAvaliableNote.getWebLink());
+        }
+
     }
 
     private void saveNote() {
@@ -120,6 +144,10 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         if (layoutWebUrl.getVisibility() == View.VISIBLE) {
             note.setWebLink(textWebUrl.getText().toString());
+        }
+
+        if (alreadyAvaliableNote != null) {
+            note.setId(alreadyAvaliableNote.getId());
         }
 
         @SuppressLint("StaticFieldLeak")
@@ -169,6 +197,26 @@ public class CreateNoteActivity extends AppCompatActivity {
                 selectedNoteColor(imgColorList, imgColorList.get(index));
                 setSubtitleIndicator();
             });
+        }
+
+        if (alreadyAvaliableNote != null && alreadyAvaliableNote.getColor() != null && !alreadyAvaliableNote.getColor().trim().isEmpty()) {
+            switch (alreadyAvaliableNote.getColor()) {
+                case "#FDBE3B":
+                    bottomSheetView.findViewById(R.id.imageColor2).performClick();
+                    break;
+                case "#FF4842":
+                    bottomSheetView.findViewById(R.id.imageColor3).performClick();
+                    break;
+                case "#3A52Fc":
+                    bottomSheetView.findViewById(R.id.imageColor4).performClick();
+                    break;
+                case "#000000":
+                    bottomSheetView.findViewById(R.id.imageColor5).performClick();
+                    break;
+                case "#333333":
+                    bottomSheetView.findViewById(R.id.imageColor1).performClick();
+                    break;
+            }
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -263,7 +311,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private void showAddUrlDialog() {
         if (dialogAddUrl == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            View view = getLayoutInflater().inflate(R.layout.layout_add_url, (ViewGroup) findViewById(R.id.layoutAddUrlContainer));
+            View view = getLayoutInflater().inflate(R.layout.layout_add_url, findViewById(R.id.layoutAddUrlContainer));
             builder.setView(view);
             dialogAddUrl = builder.create();
             if (dialogAddUrl.getWindow() != null) {
@@ -275,7 +323,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             view.findViewById(R.id.textAdd).setOnClickListener(v -> {
                 if (inputUrl.getText().toString().trim().isEmpty()) {
                     Toast.makeText(this, "Please enter a URL", Toast.LENGTH_SHORT).show();
-                } else if(!Patterns.WEB_URL.matcher(inputUrl.getText().toString()).matches()) {
+                } else if (!Patterns.WEB_URL.matcher(inputUrl.getText().toString()).matches()) {
                     Toast.makeText(this, "Please enter a valid URL", Toast.LENGTH_SHORT).show();
                 } else {
                     layoutWebUrl.setVisibility(View.VISIBLE);
