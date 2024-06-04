@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="paddingAll_noteAppAndroid">15dp</dimen>
+    <dimen name="paddingAll_homeNote_imageAddNote">5dp</dimen>
+    <dimen name="paddingAll_createNote_imageSave">5dp</dimen>
+
+    <dimen name="textSize_homeNote_textView">20sp</dimen>
+    <dimen name="textSize_createNote_inputTitle">18sp</dimen>
+    <dimen name="textSize_createNote_inputNote">15sp</dimen>
+    <dimen name="textSize_createNote_inputSubtitle">14sp</dimen>
+    <dimen name="textSize_homeNote_inputSearch">13sp</dimen>
+    <dimen name="textSize_createNote_textDateTime">12sp</dimen>
+
+    <dimen name="minHeight_createNote_inputNote">100dp</dimen>
+    <dimen name="minHeight_createNote_inputSubtitle">48dp</dimen>
+
+    <dimen name="layoutWidth_homeNote_imageAddNote">40dp</dimen>
+    <dimen name="layoutWidth_createNote_imgBack">30dp</dimen>
+    <dimen name="layoutWidth_homeNote_imageAdd">25dp</dimen>
+    <dimen name="layoutWidth_createNote_imgSave">25dp</dimen>
+    <dimen name="layoutWidth_homeNote_imageSearch">20dp</dimen>
+    <dimen name="layoutHeight_createNote_viewSubtitle">5dp</dimen>
+
+    <dimen name="layoutHeight_createNote_inputTitle">48dp</dimen>
+    <dimen name="layoutHeight_homeNote_imageAddNote">40dp</dimen>
+    <dimen name="layoutHeight_homeNote_inputSearch">35dp</dimen>
+    <dimen name="layoutHeight_createNote_imgBack">30dp</dimen>
+    <dimen name="layoutHeight_homeNote_imageAdd">25dp</dimen>
+    <dimen name="layoutHeight_createNote_imgSave">25dp</dimen>
+    <dimen name="layoutHeight_homeNote_imageSearch">20dp</dimen>
+
+    <dimen name="paddingVertical_createNote_inputTitle">8dp</dimen>
+    <dimen name="paddingHorizontal_homeNote_layoutSearch">10dp</dimen>
+
+    <dimen name="paddingEnd_homeNote_listNote">12dp</dimen>
+    <dimen name="paddingBottom_homeNote_listNote">12dp</dimen>
+    <dimen name="paddingBottom_createNote_scrollScreen">10dp</dimen>
+
+    <dimen name="marginVertical_createNote_inputNoteText">15dp</dimen>
+    <dimen name="marginHorizontal_homeNote_textView">12dp</dimen>
+    <dimen name="marginHorizontal_createNote_inputTitle">12dp</dimen>
+    <dimen name="marginHorizontal_createHome_imgBack">12dp</dimen>
+    <dimen name="marginHorizontal_homeNote_listNote">5dp</dimen>
+
+    <dimen name="marginTop_homeNote_textView">20dp</dimen>
+    <dimen name="marginTop_createNote_imgBack">20dp</dimen>
+    <dimen name="marginTop_createNote_inputTitle">15dp</dimen>
+    <dimen name="marginTop_homeNote_layoutSearch">15dp</dimen>
+    <dimen name="marginTop_homeNote_listNote">12dp</dimen>
+    <dimen name="marginBottom_createNote_scrollScreen">40dp</dimen>
+
+    <dimen name="marginStart_homeNote_imageAdd">15dp</dimen>
+    <dimen name="marginStart_homeNote_inputSearch">12dp</dimen>
+    <dimen name="marginStart_createNote_viewSubtitle">12dp</dimen>
+    <dimen name="marginStart_homeNote_layoutSearch">8dp</dimen>
+    <dimen name="marginEnd_homeNote_imageAddNote">30dp</dimen>
+    <dimen name="marginEnd_createNote_imgSave">12dp</dimen>
+    <dimen name="marginEnd_homeNote_layoutSearch">8dp</dimen>
+
+</resources>

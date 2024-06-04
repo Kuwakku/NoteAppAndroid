@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textMyNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginHorizontal_homeNote_textView"
+        android:layout_marginTop="@dimen/marginTop_homeNote_textView"
+        android:fontFamily="@font/bold"
+        android:includeFontPadding="false"
+        android:text="@string/titleHome_Home_titleDescription"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textSize_homeNote_textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginStart_homeNote_layoutSearch"
+        android:layout_marginTop="@dimen/marginTop_homeNote_layoutSearch"
+        android:layout_marginEnd="@dimen/marginEnd_homeNote_layoutSearch"
+        android:background="@drawable/background_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/paddingHorizontal_homeNote_layoutSearch"
+        app:layout_constraintTop_toBottomOf="@id/textMyNotes"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="@dimen/layoutWidth_homeNote_imageSearch"
+            android:layout_height="@dimen/layoutHeight_homeNote_imageSearch"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_search"
+            app:tint="@color/colorSearchIcon" />
+
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layoutHeight_homeNote_inputSearch"
+            android:layout_marginStart="@dimen/marginStart_homeNote_inputSearch"
+            android:background="@null"
+            android:fontFamily="@font/regular"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/textSize_homeNote_inputSearch" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRecycleView"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/marginHorizontal_homeNote_listNote"
+        android:layout_marginTop="@dimen/marginTop_homeNote_listNote"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/paddingEnd_homeNote_listNote"
+        android:paddingBottom="@dimen/paddingBottom_homeNote_listNote"
+        app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch"
+        android:layout_height="0dp">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/layoutQuickActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorQuickActionsBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/paddingAll_noteAppAndroid"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageAddNote"
+            android:layout_width="@dimen/layoutWidth_homeNote_imageAdd"
+            android:layout_height="@dimen/layoutHeight_homeNote_imageAdd"
+            android:layout_marginStart="15dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_add_outline"
+            app:tint="@color/colorIcons" />
+
+        <ImageView
+            android:id="@+id/imageAddImage"
+            android:layout_width="@dimen/layoutWidth_homeNote_imageAdd"
+            android:layout_height="@dimen/layoutHeight_homeNote_imageAdd"
+            android:layout_marginStart="@dimen/marginStart_homeNote_imageAdd"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_image"
+            app:tint="@color/colorIcons" />
+
+        <ImageView
+            android:id="@+id/imageAddWebLink"
+            android:layout_width="@dimen/layoutWidth_homeNote_imageAdd"
+            android:layout_height="@dimen/layoutHeight_homeNote_imageAdd"
+            android:layout_marginStart="@dimen/marginStart_homeNote_imageAdd"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_web_link"
+            app:tint="@color/colorIcons" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageAddNoteMain"
+        android:layout_width="@dimen/layoutWidth_homeNote_imageAddNote"
+        android:layout_height="@dimen/layoutHeight_homeNote_imageAddNote"
+        android:layout_marginEnd="@dimen/marginEnd_homeNote_imageAddNote"
+        android:background="@drawable/background_add_button"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/paddingAll_homeNote_imageAddNote"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutQuickActions"
+        app:tint="@color/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

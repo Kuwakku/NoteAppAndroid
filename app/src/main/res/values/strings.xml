@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NoteAppAndroid</string>
+    <string name="titleHome_Home_titleDescription">MY NOTES</string>
+    <string name="title_activity_create_note">CreateNoteActivity</string>
+    <string name="titleHintCreateNote_createNote_titleDescription">Note Title</string>
+    <string name="subtitleHint_createNote_titleDescription">Note Subtitle</string>
+    <string name="titleType_createNote_titleDescription">Type not here …</string>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMiscellaneous"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_miscellaneous"
+    app:behavior_peekHeight="40dp"
+    android:layout_height="wrap_content">
+    
+    <TextView
+        android:id="@+id/textMiscellaneous"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/medium"
+        android:includeFontPadding="false"
+        android:text="Miscellaneous"
+        android:textColor="@color/colorWhite"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/layoutNoteColor"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/viewColor1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/background_note_color_1" />
+
+            <ImageView
+                android:id="@+id/imageColor1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/app_name"
+                android:padding="10dp"
+                android:src="@drawable/ic_done"
+                app:tint="@color/colorWhite" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewColor2"
+                android:layout_width="35dp"
+                android:background="@drawable/background_note_color_2"
+                android:layout_height="35dp"/>
+
+            <ImageView
+                android:id="@+id/imageColor2"
+                android:layout_width="35dp"
+                android:contentDescription="@string/app_name"
+                android:padding="10dp"
+                android:layout_height="35dp"
+                app:tint="@color/colorWhite" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewColor3"
+                android:layout_width="35dp"
+                android:background="@drawable/background_note_color_3"
+                android:layout_height="35dp"/>
+
+            <ImageView
+                android:id="@+id/imageColor3"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/app_name"
+                android:padding="10dp"
+                app:tint="@color/colorWhite" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewColor4"
+                android:background="@drawable/background_note_color_4"
+                android:layout_height="35dp"
+                android:layout_width="35dp"/>
+
+            <ImageView
+                android:id="@+id/imageColor4"
+                android:layout_width="35dp"
+                android:contentDescription="@string/app_name"
+                android:padding="10dp"
+                android:layout_height="35dp"
+                app:tint="@color/colorWhite" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/viewColor5"
+                android:layout_width="35dp"
+                android:background="@drawable/background_note_color_5"
+                android:layout_height="35dp"/>
+
+            <ImageView
+                android:id="@+id/imageColor5"
+                android:layout_width="35dp"
+                android:contentDescription="@string/app_name"
+                android:padding="10dp"
+                android:layout_height="35dp"
+                app:tint="@color/colorWhite" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAddImage"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="35dp"
+        tools:ignore="UseCompoundDrawables">
+        
+        <ImageView
+            android:layout_width="25dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_image"
+            android:layout_height="25dp"
+            app:tint="@color/colorIcons" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/medium"
+            android:includeFontPadding="false"
+            android:text="Add Image"
+            android:textColor="@color/colorIcons"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAddUrl"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="35dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_web_link"
+            android:layout_height="25dp"
+            app:tint="@color/colorIcons" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/medium"
+            android:includeFontPadding="false"
+            android:text="Add URL"
+            android:textColor="@color/colorIcons"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
