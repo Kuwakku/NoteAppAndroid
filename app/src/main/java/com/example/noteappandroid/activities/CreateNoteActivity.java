@@ -47,7 +47,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class CreateNoteActivity extends AppCompatActivity {
-
     private EditText inputNoteTitle, inputNoteSubtitle, inputNoteText;
     private TextView textDateTime, textWebUrl;
     private LinearLayout layoutWebUrl;
@@ -102,6 +101,18 @@ public class CreateNoteActivity extends AppCompatActivity {
             setViewOrUpdateNote();
         }
 
+        findViewById(R.id.imgRemoveWebUrl).setOnClickListener(v -> {
+            layoutWebUrl.setVisibility(View.GONE);
+            textWebUrl.setText(null);
+        });
+
+        findViewById(R.id.imgRemoveImage).setOnClickListener(v -> {
+            imageNote.setImageBitmap(null);
+            imageNote.setVisibility(View.GONE);
+            findViewById(R.id.imgRemoveImage).setVisibility(View.GONE);
+            selectedImagePath = "";
+        });
+
         imgSave.setOnClickListener(v -> saveNote());
     }
 
@@ -114,6 +125,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         if (alreadyAvaliableNote.getImagePath() != null && !alreadyAvaliableNote.getImagePath().trim().isEmpty()) {
             imageNote.setImageBitmap(BitmapFactory.decodeFile(alreadyAvaliableNote.getImagePath()));
             imageNote.setVisibility(View.VISIBLE);
+            findViewById(R.id.imgRemoveImage).setVisibility(View.VISIBLE);
             selectedImagePath = alreadyAvaliableNote.getImagePath();
         }
 
@@ -286,6 +298,7 @@ public class CreateNoteActivity extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                     imageNote.setImageBitmap(bitmap);
                     imageNote.setVisibility(View.VISIBLE);
+                    findViewById(R.id.imgRemoveImage).setVisibility(View.VISIBLE);
                     selectedImagePath = getPathFromUri(selectedImageUri);
                 } catch (Exception exception) {
                     Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();

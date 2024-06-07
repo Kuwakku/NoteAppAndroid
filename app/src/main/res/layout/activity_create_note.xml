@@ -118,6 +118,21 @@
                 android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/inputNoteSubtitle" />
 
+            <ImageView
+                android:id="@+id/imgRemoveImage"
+                android:layout_width="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/app_name"
+                android:background="@drawable/background_delete"
+                android:padding="5dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/imgNote"
+                app:layout_constraintTop_toTopOf="@id/imgNote"
+                android:layout_height="25dp"
+                app:tint="@color/colorWhite" />
+
             <LinearLayout
                 android:id="@+id/layoutWebUrl"
                 android:layout_width="match_parent"
@@ -127,7 +142,8 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/imgNote">
+                app:layout_constraintTop_toBottomOf="@id/imgNote"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     android:id="@+id/textWebUrl"
@@ -138,6 +154,14 @@
                     android:fontFamily="@font/regular"
                     android:includeFontPadding="false"
                     android:textSize="15dp" />
+                
+                <ImageView
+                    android:id="@+id/imgRemoveWebUrl"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_delete"
+                    android:contentDescription="@string/app_name"
+                    app:tint="@color/colorAccent" />
 
             </LinearLayout>
 
